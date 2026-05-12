@@ -1,0 +1,111 @@
+---
+const experiences = [
+  {
+    title: "Telugu Bala Guruvu (Teacher's Aide)",
+    company: "SiliconAndhra ManaBadi",
+    period: "Aug 2025 – Present",
+    description:
+      "Volunteer instructor teaching foreign language curriculum to 12 middle and high school students. Collaborate with senior educators to manage classroom operations and proctor official examinations.",
+  },
+  {
+    title: "Math Competitor & Problem Author",
+    company: "Dougherty Valley Math Club",
+    period: "Aug 2024 – Present",
+    description:
+      "Author and proofread original competition problems for regional mathematics tournaments. Represent the institution at the Berkeley Math Tournament (BMT) and Stanford Math Tournament (SMT).",
+  },
+];
+
+const awards = [
+  {
+    name: "USA Computing Olympiad Silver Division",
+    organization: "USACO",
+    year: "2026",
+  },
+  {
+    name: "Berkeley Math Tournament Honorable Mention",
+    organization: "BMT",
+    year: "2026",
+  },
+  {
+    name: "CS50 Introduction to Artificial Intelligence",
+    organization: "Harvard University",
+    year: "2026",
+  },
+  {
+    name: "CS50 Introduction to Programming",
+    organization: "Harvard University",
+    year: "2023",
+  },
+];
+---
+
+<section
+  id="experience"
+  class="section-container border-t border-[#e5e5e5] scroll-mt-24"
+>
+  <div class="space-y-20">
+    <!-- Experience -->
+    <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+      <div>
+        <h2
+          class="font-mono text-xs font-bold uppercase tracking-widest text-[#666666]"
+        >
+          vachan.experience()
+        </h2>
+      </div>
+      <div class="space-y-12">
+        {
+          experiences.map((exp) => (
+            <article>
+              <header class="mb-3">
+                <div class="flex justify-between items-baseline mb-1">
+                  <h3 class="text-lg font-medium text-[#111111]">
+                    {exp.title}
+                  </h3>
+                  <span class="text-xs text-[#666666] font-medium tracking-wide">
+                    {exp.period}
+                  </span>
+                </div>
+                <p class="text-sm font-medium text-[#666666]">{exp.company}</p>
+              </header>
+              <p class="text-[#444444] text-base leading-relaxed">
+                {exp.description}
+              </p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+      <div>
+        <h2
+          class="font-mono text-xs font-bold uppercase tracking-widest text-[#666666]"
+        >
+          vachan.honors()
+        </h2>
+      </div>
+      <div>
+        <ul class="border-t border-[#e5e5e5]">
+          {
+            awards.map((award) => (
+              <li class="py-4 border-b border-[#e5e5e5] flex justify-between items-center group">
+                <div>
+                  <p class="text-sm font-medium text-[#111111]">{award.name}</p>
+                  <p class="text-xs text-[#666666] mt-1">
+                    {award.organization}
+                  </p>
+                </div>
+                <span class="text-xs font-mono text-[#666666]">
+                  {award.year}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

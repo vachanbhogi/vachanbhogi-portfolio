@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "Vachan Bhogi - AI Research Engineer & Software Developer",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400&display=swap"
+      />
+    </noscript>
+  </head>
+  <body class="bg-[#f9f6f0] text-[#111111]">
+    <slot />
+    <footer class="py-12 border-t border-[#e5e5e5] font-mono">
+      <div class="section-container">
+        <div class="grid md:grid-cols-[1fr_2fr] gap-8 md:gap-16">
+          <div class="text-[#666666] text-[10px] uppercase tracking-widest font-bold">
+            vachan.footer()
+          </div>
+          <div class="text-[#666666] text-[10px] uppercase tracking-widest">
+            &copy; {new Date().getFullYear()} Vachan Bhogi. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  .serif {
+    font-family: "Newsreader", serif;
+  }
+  .sans {
+    font-family: "Inter", sans-serif;
+  }
+  .mono {
+    font-family: "JetBrains Mono", monospace;
+  }
+</style>

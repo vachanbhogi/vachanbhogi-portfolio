@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f9f6f0;
+    --foreground: #111111;
+    --accent: #222222;
+  }
+
+  body {
+    @apply bg-[#f9f6f0] text-[#111111] selection:bg-[#111111] selection:text-white;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Academic print-like styling for focus states */
+  *:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-4xl mx-auto px-6 py-16 md:py-24;
+  }
+  
+  .border-box {
+    @apply border border-[#e5e5e5];
+  }
+}
